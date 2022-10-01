@@ -1,21 +1,17 @@
-import Link from 'next/link';
+import Head from 'next/head';
+import TopHome from '../components/TopHome';
 
 export default function Home() {
   return (
     <div>
-      <title>Create Next App</title>
-      <h1>Welcome</h1>
-
+      <Head>
+        <title>Hooliopm</title>
+        <meta name='author' content='Irene Sanchez' />
+        <meta name='description' content='HoolioPM personal website' />
+      </Head>
       <main>
-        <h1 className="title">
-          <Link href="/Contact">Contact page!</Link>
-        </h1>
-
+        <TopHome />
       </main>
-
-      <footer>
-        Powered by{' '}
-      </footer>
     </div>
   )
 }
