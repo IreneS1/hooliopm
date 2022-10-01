@@ -1,6 +1,5 @@
-import Link from 'next/link';
 import Head from 'next/head';
-import { Button } from '@nextui-org/react';
+import TopHome from '../components/TopHome';
 
 export default function Home() {
   return (
@@ -11,10 +10,7 @@ export default function Home() {
         <meta name='description' content='HoolioPM personal website' />
       </Head>
       <main>
-        <h1>Welcome</h1>
-        <h1 className="title">
-          <Link href="/Contact">Contact page!</Link>
-        </h1>
+        <TopHome />
       </main>
     </div>
   )
