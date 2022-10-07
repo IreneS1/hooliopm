@@ -1,0 +1,11 @@
+.container {
+    display: grid;
+    height: 800px;
+}
+
+.landingImage {
+    background-image: url(../public/images/hooliopmHome.jpg);
+    background-size: cover;
+    width: '100vw';
+    height: '100vh';
+}
