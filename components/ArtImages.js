@@ -26,6 +26,7 @@ export const ArtImages = () => {
                                 </Col>
                             </Card.Header>
                             <Card.Image
+                                key={item}
                                 src={item}
                                 objectFit="cover"
                                 width="100%"
