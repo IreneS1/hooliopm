@@ -9,3 +9,9 @@
     width: '100vw';
     height: '100vh';
 }
+
+.arrowDown {
+    margin-top: 280px;
+    display: flex;
+    justify-content: center;
+}
