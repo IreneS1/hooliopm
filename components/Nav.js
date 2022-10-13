@@ -1,14 +1,28 @@
 import { Navbar, Link, Text, Dropdown } from "@nextui-org/react";
 import Image from 'next/image';
 import InstagramIcon from '../public/images/InstagramIcon.png'
+import React from "react";
 
 function Nav() {
+    const [currentPage, setCurrentPage] = React.useState("Home");
 
     const collapseItems = [
-        "Home",
-        "DJ",
-        "Art",
-        "Contact",
+        {
+            page: "Home",
+            link: "/",
+        },
+        {
+            page: "DJ",
+            link: "/",
+        },
+        {
+            page: "Art",
+            link: "/",
+        },
+        {
+            page: "Contact",
+            link: "/Contact",
+        },
     ];
 
     return (
@@ -17,13 +31,13 @@ function Nav() {
                 <Navbar.Toggle showIn="xs" />
                 <Navbar.Content
                     enableCursorHighlight
-                    activeColor="warning"
+                    activeColor="primary"
                     hideIn="xs"
-                    variant="highlight"
+                    variant="highlight-solid-rounded"
                 >
-                    <Navbar.Link isActive href="#">Home</Navbar.Link>
-                    <Navbar.Link href="#">DJ Services</Navbar.Link>
-                    <Navbar.Link href="#">Art</Navbar.Link>
+                    <Navbar.Link isActive href="/">Home</Navbar.Link>
+                    <Navbar.Link href="/">DJ Services</Navbar.Link>
+                    <Navbar.Link href="/">Art</Navbar.Link>
                     <Navbar.Link href="/Contact">Contact</Navbar.Link>
                 </Navbar.Content>
                 <Navbar.Content
@@ -35,7 +49,7 @@ function Nav() {
                     }}
                 >
                     {/* Add hoolio's instagram shortcut here */}
-                    <Link href="instagram.com">
+                    <Link href="www.instagram.com">
                         <Image
                             src={InstagramIcon}
                             alt='instagram-icon-hoolio'
@@ -47,21 +61,21 @@ function Nav() {
                     <Navbar.Collapse disableAnimation>
                         {collapseItems.map((item, index) => (
                             <Navbar.CollapseItem
-                                key={item}
+                                key={item.page}
                                 activeColor="primary"
                                 // css={{
                                 //     color: index === collapseItems.length - 1 ? "$error" : "",
                                 // }}
-                                isActive={index === 2}
+                                isActive={index == 2}
                             >
                                 <Link
                                     color="inherit"
                                     css={{
                                         minWidth: "100%",
                                     }}
-                                    href={item}
+                                    href={item.link}
                                 >
-                                    {item}
+                                    {item.page}
                                 </Link>
                             </Navbar.CollapseItem>
                         ))}
